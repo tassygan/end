@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package proto;
+
+service Calculator {
+  rpc PrimeNumberDecomposition(PrimeRequest) returns (stream PrimeReply) {}
+  rpc ComputeAverage(stream AverageRequest) returns (AverageReply) {}
+}
+
+message PrimeRequest {
+  int32 inp = 1;
+}
+
+message PrimeReply {
+  int32 res = 1;
+}
+
+message AverageRequest {
+  int32 inp = 1;
+}
+
+message AverageReply {
+  int32 res = 1;
+}
